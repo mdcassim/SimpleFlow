@@ -290,18 +290,6 @@
 
 	<!-- Mule Dependencies -->
 	<dependencies>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mule</groupId> -->
-<!-- 			<artifactId>mule-core</artifactId> -->
-<!-- 			<version>${mule.version}</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.mulesoft.muleesb.modules</groupId> -->
-<!-- 			<artifactId>mule-module-boot-ee</artifactId> -->
-<!-- 			<version>${mule.version}</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 	    </dependency> -->
 		<!-- Xml configuration -->
 		<dependency>
 			<groupId>org.mule.modules</groupId>
@@ -309,24 +297,11 @@
 			<version>${mule.version}</version>
 			<scope>provided</scope>
 		</dependency>
-<!-- 		<dependency> -->
-<!--         	<groupId>com.mulesoft.muleesb</groupId> -->
-<!-- 			<artifactId>mule-core-ee</artifactId> -->
-<!-- 			<version>${mule.version}</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
 		<dependency>
 			<groupId>com.mulesoft.muleesb.modules</groupId>
 			<artifactId>mule-module-data-mapper</artifactId>
 			<version>${mule.version}</version>
 		</dependency>
-		<!-- Xml configuration -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.mulesoft.muleesb.modules</groupId> -->
-<!-- 			<artifactId>mule-module-spring-config-ee</artifactId> -->
-<!-- 			<version>${mule.version}</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
 
 		<!-- Mule Transports -->
 		<dependency>
