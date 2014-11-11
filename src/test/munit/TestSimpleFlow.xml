@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule  	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:mock="http://www.mulesoft.org/schema/mule/mock" xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.5.2"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/mock http://www.mulesoft.org/schema/mule/mock/current/mule-mock.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd">
+    <munit:config doc:name="Munit configuration"/>
+    <spring:beans>
+        <spring:import resource="SimpleFlow.xml"/>
+    </spring:beans>
+    <munit:test name="TestSimpleFlow1" description="Unit Test for Simple Flow">
+    	<munit:set payload-ref="#[string: Felipe!]" doc:name="Set Message"/>
+    	<flow-ref name="SimpleFlow1" doc:name="Flow Reference"/>
+    	<munit:assert-not-null doc:name="Assert Not Null Payload"/>
+    	<munit:assert-that payloadIs-ref="#[string: Felipe! TRANSFORMATION]" doc:name="Assert Payload"/>
+    </munit:test>
+    
+    <munit:test name="TestSimpleFlow2" description="Unit Test for Simple Flow">
+    	<munit:set payload-ref="#[string: TEST]" doc:name="Set Message"/>
+    	<flow-ref name="SimpleFlow1" doc:name="Flow Reference"/>
+    	<munit:assert-not-null doc:name="Assert Not Null Payload"/>
+    	<munit:assert-that payloadIs-ref="#[string: TEST TRANSFORMATION]" doc:name="Assert Payload"/>
+    </munit:test>
+    
+    
+    <munit:test name="TestSimpleFlow3" description="Unit Test for Simple Flow">
+    	<munit:set payload-ref="#[string: Hello world]" doc:name="Set Message"/>
+    	<flow-ref name="SimpleFlow1" doc:name="Flow Reference"/>
+    	<munit:assert-not-null doc:name="Assert Not Null Payload"/>
+    	<munit:assert-that payloadIs-ref="#[string: Hello world TRANSFORMATION]" doc:name="Assert Payload"/>
+    </munit:test>
+    
+    
+    <munit:test name="TestSimpleFlow4" description="Unit Test for Simple Flow">
+    	<munit:set payload-ref="#[string: Hell world!]" doc:name="Set Message"/>
+    	<flow-ref name="SimpleFlow1" doc:name="Flow Reference"/>
+    	<munit:assert-not-null doc:name="Assert Not Null Payload"/>
+    	<munit:assert-that payloadIs-ref="#[string: Hell world! TRANSFORMATION]" doc:name="Assert Payload"/>
+    </munit:test>
+</mule>
